@@ -2,34 +2,23 @@ package main
 
 import "fmt"
 
-func presentaSuma(suma func(int, int) int, a, b int) {
-	fmt.Println("La suma de ", a, " y ", b, " es:", suma(a, b))
-}
-
-func presentaResta(resta func(int, int) int, a, b int) {
-	fmt.Println("La resta de ", a, " y ", b, " es:", resta(a, b))
+var funciones = map[string]func(int, int) int{
+	"suma":       func(a, b int) int { return a + b },
+	"resta":      func(a, b int) int { return a - b },
+	"multiplica": func(a, b int) int { return a * b },
+	"divide":     func(a, b int) int { return a / b },
 }
 
 func presentaResultado(operacion string, a int, b int) {
-	suma := func(a, b int) int {
-		return a + b
+	f, exists := funciones[operacion]
+	if !exists {
+		fmt.Println("Operación no valida")
 	}
-	resta := func(a, b int) int {
-		return a - b
-	}
-
-	resultado := 0
-
-	if operacion == "sumar" {
-		resultado = suma(a, b)
-	} else if operacion == "restar" {
-		resultado = resta(a, b)
-	}
-	fmt.Println("La ", operacion, " de ", a, " y ", b, " es:", resultado)
-
+	fmt.Println("Para a= ", a, " y b= ", b, "la ", operacion, "resultante es: ", f(a, b))
 }
-
 func main() {
-
-	presentaResultado(suma, 5, 8)
+	presentaResultado("suma", 5, 8)
+	presentaResultado("resta", 12, 8)
+	presentaResultado("multiplica", 3, 8)
+	presentaResultado("divide", 8, 2)
 }

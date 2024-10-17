@@ -1,9 +1,9 @@
 package main
 
+/*
 import "fmt"
 
 func main() {
-	/*
 		var suma int = 0
 
 		for i := 0; i <= 100; i++ {
@@ -14,7 +14,7 @@ func main() {
 
 		fmt.Println("La suma de los primeros 100
 		numeros es:", suma)
-	
+
 
 	var miMapa = map[string]string{
 		"Colombia":  "Bogota",
@@ -32,7 +32,7 @@ func main() {
 	for {
 		if fruta == "naranja"
 		fmt.Println("Adivinaste la fruta")
-		break 
+		break
 	}
 }
 */
