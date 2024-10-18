@@ -113,7 +113,7 @@ func main() {
 		return
 	}
 	mediaAritmetrica := calcularMediaAritmetrica(alumnos)
-	fmt.Printf("La media aritmetrica de todas las notas es: %2.f\\n", mediaAritmetrica)
+	fmt.Printf("La media aritmetrica de todas las notas es:%2.f\n", mediaAritmetrica)
 
 	err = escribirCSV("promedios.csv", alumnos)
 	if err != nil {
